@@ -8,18 +8,19 @@ module.exports = {
 };
 
 function index(req, res) {
-    res.render('flights/index', {flights, title: 'All Flights'});
+    Flight.find({}, function(err, flights){
+    res.render('flights/index', {flights, title: 'All Flights'})});
 }
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        Ticket.find({flight: flight._id}, function(err, tickets) {
+        // Ticket.find({flight: flight._id}, function(err, tickets) {
             res.render('flights/show', {
-                title: `${flight.airline} Flight ${flight.flightNo}`,
+                // title: `${flight.airline} Flight ${flight.flightNo}`,
                 flight,
-                tickets
+                // tickets,
             });
         })
-    })
+    // })
 }
 function newFlight(req, res) {
     res.render('flights/new', {title: 'New Flight'});
