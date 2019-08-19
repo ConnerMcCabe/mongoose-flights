@@ -16,7 +16,16 @@
         <option value="Southwest">Southwest</option>
         <option value="United">United</option>
     </select> 
-
+    <% flight.destination.forEach(d => { %>
+        <div>
+          <div><%= d.arrival %></div>
+          <div><%= d.airport %></div>
+          <div><%= d.flightNo %></div>
+   
+          <div class="right"><a href="/flights/<%= flight._id %>" class="button">Details</a></div>
+        </div>
+        <% }) %>
+ 
 
 </body>
 </html>

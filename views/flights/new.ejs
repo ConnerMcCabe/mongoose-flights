@@ -25,15 +25,24 @@
     <div>
         <label for="airport">Airport:</label>
         <select name="airport">
-            <option value="AUS">Austin</option>
             <option value="DAL">Dallas</option>
+            <option value="AUS">Austin</option>
             <option value="LAX">LA</option>
             <option value="SEA">Seattle</option>
         </select> 
     
     </div>
     <div>
-        <!-- date -->
+        <label for="destination">Destination:</label>
+        <select name="destination.arrival">
+            <option value="AUS">Austin</option>
+            <option value="DAL">Dallas</option>
+            <option value="LAX">LA</option>
+            <option value="SEA">Seattle</option>
+        </select> 
+    </div>
+    <div>
+        <input type="datetime-local">
     </div>
     <div>
         <button type="submit">Add Flight</button>
