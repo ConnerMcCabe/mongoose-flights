@@ -8,15 +8,23 @@ module.exports = {
 };
 
 function index(req, res) {
-    res.render('flights/index', )
+    res.render('flights/index', {flights, title: 'All Flights'});
 }
 function show(req, res) {
-
+    Flight.findById(req.params.id, function(err, flight) {
+        Ticket.find({flight: flight._id}, function(err, tickets) {
+            res.render('flights/show', {
+                title: `${flight.airline} Flight ${flight.flightNo}`,
+                flight,
+                tickets
+            });
+        })
+    })
 }
 function newFlight(req, res) {
-    res.render('flights/new');
+    res.render('flights/new', {title: 'New Flight'});
 }
 function create(req, res) {
-    let flight = new Flight;
-    
+    Flight.create(req.body)
+    res.redirect('/flights')   
 }
