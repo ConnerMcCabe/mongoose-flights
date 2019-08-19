@@ -27,5 +27,5 @@ function newFlight(req, res) {
 }
 function create(req, res) {
     Flight.create(req.body)
-    res.redirect('/flights')   
+        res.redirect('/flights')    
 }

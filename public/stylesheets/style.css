@@ -1,6 +1,14 @@
 body {
+  display: flex;
+  align-content: center;
+  justify-content: center;
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 6vmin "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightgray; 
+}
+nav {
+  padding: 4vmin;
+  font-size: 5vmin;
 }
 
 a {

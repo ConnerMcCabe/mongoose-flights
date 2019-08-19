@@ -6,8 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title><%= title %></title>
+
 </head>
 <body>
-    <h1>testing</h1>
+    <h1><%= title %></h1>
+    <nav>
+        <a href="/flights" class="<%= title === 'All Flights' ? 'highlight' : '' %>">All Flights</a>
+        <a href="/flights/new" class="<%= title === 'New Flight' ? 'highlight' : '' %>">Add Flight</a>
+    </nav>
+    <label for="airline">Airline:</label>
+    <select name="Airlines">
+        <option value="American">American</option>
+        <option value="Southwest">Southwest</option>
+        <option value="United">United</option>
+    </select> 
+    <% console.log(flights) %> 
+    <% flights.forEach(flight => { %>
+        <div class="row<%= flight.departs < new Date() ? ' red' : '' %>">
+          <div><%= flight.airline %></div>
+          <div><%= flight.airport %></div>
+          <div><%= flight.flightNo %></div>
+   
+          <div class="right"><a href="/flights/<%= flight._id %>" class="button">Details</a></div>
+        </div>
+        <% }) %>
+ 
+
 </body>
 </html>
+

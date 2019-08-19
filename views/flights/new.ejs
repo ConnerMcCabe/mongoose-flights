@@ -8,6 +8,40 @@
     <title><%= title %></title>
 </head>
 <body>
-    <h1>testing 2</h1>
+    <h1><%= title %></h1>
+    <form action="/flights" method="POST">
+    <div>
+        <label for="airline">Airline:</label>
+    <select name="airline">
+        <option value="American">American</option>
+        <option value="Southwest">Southwest</option>
+        <option value="United">United</option>
+    </select> 
+    </div>
+    <div>
+        <label for="flightNo">Flight # (10-9999):</label>
+        <input type="number" name="flightNo" required min="10" max="9999">
+    </div>
+    <div>
+        <label for="airport">Airport:</label>
+        <select name="airport">
+            <option value="AUS">Austin</option>
+            <option value="DAL">Dallas</option>
+            <option value="LAX">LA</option>
+            <option value="SEA">Seattle</option>
+        </select> 
+    
+    </div>
+    <div>
+        <!-- date -->
+    </div>
+    <div>
+        <button type="submit">Add Flight</button>
+    </div>
+    
+    
+    
+    </form>
+
 </body>
 </html>
